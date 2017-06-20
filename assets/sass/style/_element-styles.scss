@@ -1,0 +1,446 @@
+/*======================
+ Tooltip style
+========================*/
+
+.link {
+    &:before,
+    &:after {
+        position: absolute;
+    }
+    &:before {
+        width: 0;
+        height: 0;
+        content: "";
+    }
+    &:after {
+        content: attr(data-tooltip);
+        width: 120px;
+        display: block;
+        padding: 10px 0;
+        @include border-radius(4px);
+        background-color: $background-black;
+        color: $font-white;
+        @include custom-font($fs-small, $fw-400);
+        text-align: center;
+        text-transform: none;
+    }
+    &.top,
+    &.bottom {
+        &:after,
+        &:before {
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        &:before {
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+        }
+    }
+    &.left,
+    &.right {
+        &:after,
+        &:before {
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        &:before {
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+        }
+    }
+    &.top {
+        &:after {
+            bottom: calc(100% + 10px);
+        }
+        &:before {
+            border-top: 7px solid $border-black;
+            bottom: calc(100% + 3px);
+        }
+    }
+    &.bottom {
+        &:after {
+            top: calc(100% + 10px);
+        }
+        &:before {
+            border-bottom: 7px solid $border-black;
+            top: calc(100% + 3px);
+        }
+    }
+    &.left {
+        &:after {
+            right: calc(100% + 10px);
+        }
+        &:before {
+            border-left: 7px solid $border-black;
+            right: calc(100% + 3px);
+        }
+    }
+    &.right {
+        &:after {
+            left: calc(100% + 10px);
+        }
+        &:before {
+            border-right: 7px solid $border-black;
+            left: calc(100% + 3px);
+        }
+    }
+}
+
+
+/*-------------------------------
+ tooltip-1 to tooltip-4 styles 
+ -------------------------------*/
+
+.tooltip-1,
+.tooltip-2,
+.tooltip-3,
+.tooltip-4 {
+    &:before,
+    &:after {
+        opacity: 0;
+        z-index: -1;
+        @include transition(0.5s, ease, all);
+    }
+    &:hover {
+        &:before,
+        &:after {
+            opacity: 1;
+            z-index: 11;
+            @include transition(0.25s, ease, all);
+        }
+    }
+}
+
+
+/*-------------------------------
+  tooltip-5 to tooltip-8 styles 
+  ------------------------------*/
+
+.tooltip-5,
+.tooltip-6,
+.tooltip-7,
+.tooltip-8 {
+    &:before {
+        opacity: 0;
+        z-index: -1;
+        @include transition(0.75s, ease, all);
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+            z-index: 11;
+            @include transition(0.25s, ease, all);
+        }
+    }
+}
+
+
+/*---- tooltip-5 and tooltip-8 styles ----*/
+
+.tooltip-5,
+.tooltip-8 {
+    &:after {
+        opacity: 0;
+        z-index: -1;
+        height: 0;
+        padding: 0;
+        line-height: 0;
+        @include transition(0.75s, ease, all);
+    }
+    &:hover {
+        &:after {
+            opacity: 1;
+            z-index: 11;
+            height: 35px;
+            line-height: 35px;
+            @include transition(0.25s, ease, all);
+        }
+    }
+}
+
+
+/*---- tooltip-6 and tooltip-7 styles ----*/
+
+.tooltip-6,
+.tooltip-7 {
+    &:after {
+        opacity: 0;
+        z-index: -1;
+        width: 0;
+        @include transition(0.75s, ease, all);
+    }
+    &:hover {
+        &:after {
+            opacity: 1;
+            z-index: 11;
+            width: 120px;
+            @include transition(0.25s, ease, all);
+        }
+    }
+}
+
+
+/*-------------------------------
+  tooltip-9 to tooltip-12 styles
+  ------------------------------*/
+
+.tooltip-9,
+.tooltip-10,
+.tooltip-11,
+.tooltip-12 {
+    &:after {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+        -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+    }
+    &:before {
+        opacity: 0;
+        z-index: -1;
+        @include transition(0.4s, ease, all);
+        transition-delay: 0.4s;
+        -webkit-transition-delay: 0.4s;
+    }
+    &:hover {
+        &:after {
+            transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+            -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        &:before {
+            opacity: 1;
+            z-index: 11;
+            @include transition(0.4s, ease, all);
+            transition-delay: 0.4s;
+            -webkit-transition-delay: 0.4s;
+        }
+    }
+}
+
+
+/*---- tooltip-9 style ----*/
+
+.tooltip-9 {
+    &:after {
+        bottom: calc(100% + 5px);
+        transform-origin: bottom center;
+        -webkit-transform-origin: bottom center;
+    }
+    &:hover {
+        &:after {
+            bottom: calc(100% + 10px);
+        }
+    }
+}
+
+
+/*---- tooltip-10 style ----*/
+
+.tooltip-10 {
+    &:after {
+        right: calc(100% + 5px);
+        transform-origin: center left;
+        -webkit-transform-origin: center left;
+    }
+    &:hover {
+        &:after {
+            right: calc(100% + 10px);
+        }
+    }
+}
+
+
+/*---- tooltip-11 style ----*/
+
+.tooltip-11 {
+    &:after {
+        left: calc(100% + 5px);
+        transform-origin: center right;
+        -webkit-transform-origin: center right;
+    }
+    &:hover {
+        &:after {
+            left: calc(100% + 10px);
+        }
+    }
+}
+
+
+/*---- tooltip-12 style ----*/
+
+.tooltip-12 {
+    &:after {
+        top: calc(100% + 5px);
+        transform-origin: top center;
+        -webkit-transform-origin: top center;
+    }
+    &:hover {
+        &:after {
+            top: calc(100% + 10px);
+        }
+    }
+}
+
+
+/*-------------------------------
+  tooltip-13 and tooltip-14 styles
+  ------------------------------*/
+
+@include vibrate();
+.tooltip-13,
+.tooltip-14 {
+    &:after,
+    &:before {
+        opacity: 0;
+        z-index: -1;
+    }
+    &:after {
+        @include transition(0.4s, linear, opacity);
+    }
+    &:before {
+        @include transition(0.4s, ease, all);
+    }
+    &:hover {
+        &:after,
+        &:before {
+            opacity: 1;
+            z-index: 11;
+        }
+        &:after {
+            animation-name: vibrate;
+            animation-duration: 300ms;
+        }
+        &:before {
+            @include transition(0.4s, ease, all);
+        }
+    }
+}
+
+
+/*-------------------------------
+  tooltip-15 style
+  ------------------------------*/
+
+@include jump-up-keyframe();
+.tooltip-15 {
+    &:after,
+    &:before {
+        opacity: 0;
+        z-index: -1;
+    }
+    &:after {
+        @include transition(0.4s, linear, opacity);
+    }
+    &:before {
+        @include transition(0.4s, ease, all);
+    }
+    &:hover {
+        &:after,
+        &:before {
+            opacity: 1;
+            z-index: 11;
+        }
+        &:before,
+        &:after {
+            animation-name: jump-up;
+            animation-duration: 300ms;
+        }
+        &:before {
+            @include transition(0.4s, ease, all);
+        }
+    }
+}
+
+
+/*-------------------------------
+  tooltip-16 style
+  ------------------------------*/
+
+@include jump-down-keyframe();
+.tooltip-16 {
+    &:after,
+    &:before {
+        opacity: 0;
+        z-index: -1;
+    }
+    &:after {
+        @include transition(0.4s, linear, opacity);
+    }
+    &:before {
+        @include transition(0.4s, ease, all);
+    }
+    &:hover {
+        &:after,
+        &:before {
+            opacity: 1;
+            z-index: 11;
+        }
+        &:before,
+        &:after {
+            animation-name: jump-down;
+            animation-duration: 300ms;
+        }
+        &:before {
+            @include transition(0.4s, ease, all);
+        }
+    }
+}
+
+
+/*-------------------------------
+  tooltip-17 and tooltip-18 styles
+  ------------------------------*/
+
+.tooltip-17,
+.tooltip-18 {
+    &:after,
+    &:before {
+        opacity: 0;
+        z-index: -1;
+        @include transition(0.4s, ease-in-out, all);
+    }
+    &:hover {
+        &:after,
+        &:before {
+            opacity: 1;
+            z-index: 11;
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
+
+/*-------------------------------
+  tooltip-19 and tooltip-20 styles
+  ------------------------------*/
+
+@include ring-keyframe();
+.tooltip-19,
+.tooltip-20 {
+    &:after,
+    &:before {
+        opacity: 0;
+        z-index: -1;
+    }
+    &:after {
+        transform: rotate(0);
+        transform-origin: top center;
+    }
+    &:before {
+        @include transition(0.4s, ease-in-out, all);
+    }
+    &:hover {
+        &:after,
+        &:before {
+            opacity: 1;
+            z-index: 11;
+            animation-name: ring;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+    }
+}

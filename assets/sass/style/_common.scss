@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700i,800,800i,900,900i');
+
+/*======================
+  Reset Default Styles 
+========================*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $font-family, sans-serif;
+}
+
+a,
+h1,
+h2,
+img,
+li,
+p,
+section,
+ul,
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline
+}
+
+section {
+    display: block
+}
+
+ul {
+    list-style: none
+}
+
+a {
+    outline: 0 !important;
+    text-decoration: none !important;
+}
+
+
+/*======================
+ Common Style 
+========================*/
+
+body {
+ @include gradiant();
+}
+
+a.back-to-article {
+    width: 100%;
+    float: left;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    background: $background-gray;
+    color: $font-white;
+    text-align: left;
+    text-indent: 20px;
+    font-size: $fs-small;
+    text-transform: uppercase;
+    text-decoration: none;
+    &.back-to-article:hover {
+        color: $font-puple;
+    }
+}
+
+a.github {
+    width: 150px;
+    right: -32px;
+    top: 27px;
+    position: fixed;
+    padding: 5px 0 8px;
+    color: $font-white;
+    @include custom-font($fs-medium,
+    $fw-500);
+    background-color: $background-puple;
+    text-transform: capitalize;
+    text-align: center;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    z-index: 111;
+    @include box-shadow(1px 1px 1px 1px rgba(0, 0, 0, 0.5));
+    &:hover {
+        background-color: $background-white;
+        color: $font-puple;
+    }
+}
+
+main {
+	width: 95%;
+	max-width: 600px;
+	margin: 0 auto;
+    padding: 30px 0;
+    h1 {
+        color: $font-white;
+        @include custom-font($fs-extra-large,
+        $fw-600);
+        text-align: center;
+        text-transform: none;
+    }
+	h2 {
+	    padding: 15px 20px;
+		color: $font-white;
+        @include custom-font($fs-default,
+        $fw-600);
+        text-align: left;
+        text-transform: uppercase;
+		background: rgba(0,0,0,0.5);
+	}
+ 
+    section {
+        width: 100%;
+        height: auto;
+        float: left;
+        display: block;
+        margin: 0 auto;
+        padding: 30px 0 0;
+        li,
+        a {
+            display: block;
+        }
+        li {
+            width: 25%;
+            height: auto;
+            float: left;
+            position: relative;
+            padding: 30px 0;
+            &:nth-child(4n+1) {
+                clear: left;
+            }
+            a,
+            a:active,
+            a:focus,
+            a:visited {
+                border: 2px solid $border-white;
+                background-color: transparent;
+            }
+            a {
+                width: 100%;
+                max-width: 120px;
+                position: relative;
+                margin: 0 auto;
+                padding: 10px 0;
+                border: 2px solid $border-white;
+                background-color: transparent;
+                text-align: center;
+                text-transform: uppercase;
+                color: $font-white;
+                @include custom-font($fs-medium,
+                $fw-400);
+                @include transition(0.5s,
+                ease,
+                background-color);
+                &:hover {
+                    background-color: $background-white;
+                    color: $font-gray;
+                }
+            }
+        }
+    }
+}
+
+
+/*---- View < 1024px ----*/
+
+@media(max-width:1024px) {
+    main section li {
+        width: 50%;
+        &:nth-child(4n+1) {
+            clear: none;
+        }
+        &:nth-child(2n+1) {
+            clear: left;
+        }
+    }
+}
+
+
+/*---- View < 450px ----*/
+
+@media(max-width:450px) {
+    main section li {
+        width: 100%;
+    }
+}
