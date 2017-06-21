@@ -1,0 +1,15 @@
+/*-------------------
+  #checkbox-h style
+  ------------------*/
+
+input[type='checkbox']#checkbox-h+label {
+    border: 1px solid #fff;
+    background: transparent url(../images/tick-icon.png) no-repeat;
+    background-position: 50% 0;
+    background-size: 40px 80px;
+    @include transition(0.4s, ease, background);
+}
+
+input[type='checkbox']#checkbox-h:checked+label {
+    background-position: 50% -40px;
+}

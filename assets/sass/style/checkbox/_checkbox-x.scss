@@ -1,0 +1,41 @@
+/*-------------------
+  #checkbox-p style
+  ------------------*/
+
+input[type='checkbox']#checkbox-p+label {
+    border: 1px solid #fff;
+    background: transparent;
+	overflow: visible;
+	 @include transition(0.4s, ease, border);
+}
+
+input[type='checkbox']#checkbox-p+label:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+	top: -54px;
+    left: 0;
+    bottom: 0;
+    right: -54px;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    margin: auto;
+    background: rgb(123, 74, 74) url(../images/tick-icon-white.png) no-repeat;
+    background-position: center;
+    background-size: 13px;
+    @include transition(0.4s, ease, all);
+}
+
+input[type='checkbox']#checkbox-p:checked+label {
+	border: 8px solid #fff;
+}
+
+input[type='checkbox']#checkbox-p:checked+label:before {
+    opacity: 1;
+    z-index: 1;
+	top: -38px;
+    left: 0;
+    bottom: 0;
+    right: -37px;
+}

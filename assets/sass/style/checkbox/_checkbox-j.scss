@@ -1,0 +1,38 @@
+/*-------------------
+  #checkbox-j style
+  ------------------*/
+
+input[type='checkbox']#checkbox-j+label {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+input[type='checkbox']#checkbox-j+label:before,
+input[type='checkbox']#checkbox-j+label:after {
+    content: '';
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    @include transition(0.2s, ease, all);
+}
+
+input[type='checkbox']#checkbox-j+label:before {
+    left: -22px;
+}
+
+input[type='checkbox']#checkbox-j+label:after {
+    right: -22px;
+}
+
+input[type='checkbox']#checkbox-j:checked+label:before {
+    left: 9px;
+}
+
+input[type='checkbox']#checkbox-j:checked+label:after {
+    right: 9px;
+}

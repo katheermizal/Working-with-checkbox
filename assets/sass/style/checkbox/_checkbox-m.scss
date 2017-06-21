@@ -1,0 +1,31 @@
+/*-------------------
+  #checkbox-m style
+  ------------------*/
+
+input[type='checkbox']#checkbox-m+label {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+input[type='checkbox']#checkbox-m+label:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    background-color: #fff;
+    opacity: 0;
+    z-index: -1;
+    @include transition(0.4s, ease-in-out, all);
+}
+
+input[type='checkbox']#checkbox-m:checked+label:before {
+    opacity: 1;
+    z-index: 1;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}

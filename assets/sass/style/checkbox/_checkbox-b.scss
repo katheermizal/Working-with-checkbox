@@ -1,0 +1,13 @@
+/*-------------------
+  #checkbox-b style
+  ------------------*/
+
+input[type='checkbox']#checkbox-b+label {
+    border: 1px solid #fff;
+    background: transparent;
+    @include transition(0.5s, ease, all);
+}
+
+input[type='checkbox']#checkbox-b:checked+label {
+    border: 8px solid #fff;
+}

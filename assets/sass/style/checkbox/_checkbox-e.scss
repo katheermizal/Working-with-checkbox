@@ -1,0 +1,16 @@
+/*-------------------
+  #checkbox-e style
+  ------------------*/
+
+input[type='checkbox']#checkbox-e+label {
+    border: 1px solid #fff;
+    background-color: transparent;
+    @include transition(0.8s, ease, border);
+}
+
+input[type='checkbox']#checkbox-e:checked+label {
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+    @include transition(0.5s, ease, all);
+}

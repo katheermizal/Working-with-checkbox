@@ -1,0 +1,29 @@
+/*-------------------
+  #checkbox-i style
+  ------------------*/
+
+input[type='checkbox']#checkbox-i+label {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+input[type='checkbox']#checkbox-i+label:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: -60px;
+    bottom: 0;
+    left: -60px;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    @include transition(0.2s, ease, all);
+}
+
+input[type='checkbox']#checkbox-i:checked+label:before {
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+}

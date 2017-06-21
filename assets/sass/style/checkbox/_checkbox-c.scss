@@ -1,0 +1,15 @@
+/*-------------------
+  #checkbox-c style
+  ------------------*/
+
+input[type='checkbox']#checkbox-c+label {
+    border: 1px solid #fff;
+    background-color: transparent;
+    @include transition(0.8s, ease, border);
+}
+
+input[type='checkbox']#checkbox-c:checked+label {
+    border: 8px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+    @include transition(0.5s, ease, all);
+}

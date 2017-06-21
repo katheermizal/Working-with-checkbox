@@ -1,0 +1,32 @@
+/*-------------------
+  #checkbox-n style
+  ------------------*/
+
+input[type='checkbox']#checkbox-n+label {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+input[type='checkbox']#checkbox-n+label:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+    -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+}
+
+input[type='checkbox']#checkbox-n:checked+label:before {
+    transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+    -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}

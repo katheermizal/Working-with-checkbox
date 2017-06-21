@@ -1,0 +1,39 @@
+/*-------------------
+  #checkbox-u style
+  ------------------*/
+
+input[type='checkbox']#checkbox-u+label {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+input[type='checkbox']#checkbox-u+label:before,
+input[type='checkbox']#checkbox-u+label:after {
+    content: '';
+    width: 20px;
+    height: 4px;
+	top: 0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+   background: transparent;
+	@include transition(0.2s, ease, all);
+}
+
+input[type='checkbox']#checkbox-u:checked+label:before,
+input[type='checkbox']#checkbox-u:checked+label:after {
+	@include transition(0.4s, ease, all);
+	background: #fff;
+}
+
+input[type='checkbox']#checkbox-u:checked+label:before {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+input[type='checkbox']#checkbox-u:checked+label:after {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}

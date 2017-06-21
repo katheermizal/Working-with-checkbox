@@ -1,0 +1,15 @@
+/*-------------------
+  #checkbox-f style
+  ------------------*/
+
+input[type='checkbox']#checkbox-f+label {
+    border: 1px solid #fff;
+    background: transparent;
+    @include transition(0.5s, ease, background);
+    background-position: cennter;
+    background-size: 40px 40px;
+}
+
+input[type='checkbox']#checkbox-f:checked+label {
+    background: transparent url(../images/tick-icon-white.png) no-repeat;
+}

@@ -1,0 +1,52 @@
+/*======================
+Check Boxes Styles
+========================*/
+input[type='checkbox'] {
+    display: none;
+}
+
+input[type='checkbox']+label {
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-indent: -999px;
+    overflow: hidden;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+input[type='checkbox']+label:after,
+input[type='checkbox']+label:before {
+    content: '';
+    position: absolute;
+}
+
+@import "checkbox/checkbox-a";
+@import "checkbox/checkbox-b";
+@import "checkbox/checkbox-c";
+@import "checkbox/checkbox-d";
+@import "checkbox/checkbox-e";
+@import "checkbox/checkbox-f";
+@import "checkbox/checkbox-g";
+@import "checkbox/checkbox-h";
+@import "checkbox/checkbox-i";
+@import "checkbox/checkbox-j";
+@import "checkbox/checkbox-k";
+@import "checkbox/checkbox-l";
+@import "checkbox/checkbox-m";
+@import "checkbox/checkbox-n";
+@import "checkbox/checkbox-o";
+@import "checkbox/checkbox-p";
+@import "checkbox/checkbox-q";
+@import "checkbox/checkbox-r";
+@import "checkbox/checkbox-s";
+@import "checkbox/checkbox-t";
+@import "checkbox/checkbox-u";
+@import "checkbox/checkbox-v";
+@import "checkbox/checkbox-w";
+@import "checkbox/checkbox-x";

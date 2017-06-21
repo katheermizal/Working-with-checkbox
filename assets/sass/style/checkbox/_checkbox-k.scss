@@ -1,0 +1,38 @@
+/*-------------------
+  #checkbox-k style
+  ------------------*/
+
+input[type='checkbox']#checkbox-k+label {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+input[type='checkbox']#checkbox-k+label:before,
+input[type='checkbox']#checkbox-k+label:after {
+    content: '';
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    @include transition(0.2s, ease, all);
+}
+
+input[type='checkbox']#checkbox-k+label:before {
+    top: -22px;
+}
+
+input[type='checkbox']#checkbox-k+label:after {
+    bottom: -22px;
+}
+
+input[type='checkbox']#checkbox-k:checked+label:before {
+    top: 9px;
+}
+
+input[type='checkbox']#checkbox-k:checked+label:after {
+    bottom: 9px;
+}

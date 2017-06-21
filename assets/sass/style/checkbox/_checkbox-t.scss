@@ -1,0 +1,28 @@
+/*-------------------
+  #checkbox-t style
+  ------------------*/
+
+input[type='checkbox']#checkbox-t+label {
+    border: 1px solid #fff;
+    background: tranparent;
+	@include border-radius(50%);
+}
+
+input[type='checkbox']#checkbox-t+label:before {
+    content: '';
+    width: 20px;
+	height: 20px;
+	top: 0;
+    left: 0;
+    bottom: -60px;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    background: #fff;
+	@include border-radius(50%);
+	@include transition(0.2s, ease, all);
+}
+
+input[type='checkbox']#checkbox-t:checked+label:before {
+	bottom: 0;
+}
