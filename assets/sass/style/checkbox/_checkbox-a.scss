@@ -3,12 +3,12 @@
   ------------------*/
 
 input[type='checkbox']#checkbox-a+label {
-    border: 1px solid #fff;
+    border: 1px solid $border-white;
     background: transparent;
     @include transition(0.5s, ease, all);
 }
 
 input[type='checkbox']#checkbox-a:checked+label {
-    border: 1px solid #fff;
-    background: #fff;
+    border: 1px solid $border-white;
+    background: $background-white;
 }

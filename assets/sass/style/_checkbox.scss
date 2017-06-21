@@ -1,6 +1,7 @@
 /*======================
 Check Boxes Styles
 ========================*/
+
 input[type='checkbox'] {
     display: none;
 }
@@ -16,14 +17,8 @@ input[type='checkbox']+label {
     -moz-box-sizing: border-box;
     text-indent: -999px;
     overflow: hidden;
-    border: 1px solid #fff;
+    border: 1px solid $border-white;
     cursor: pointer;
-}
-
-input[type='checkbox']+label:after,
-input[type='checkbox']+label:before {
-    content: '';
-    position: absolute;
 }
 
 @import "checkbox/checkbox-a";

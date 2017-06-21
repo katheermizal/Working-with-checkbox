@@ -1,41 +1,56 @@
 /*-------------------
-  #checkbox-p style
+  #checkbox-w style
   ------------------*/
 
-input[type='checkbox']#checkbox-p+label {
-    border: 1px solid #fff;
+input[type='checkbox']#checkbox-w+label {
+    border: 1px solid $border-white;
     background: transparent;
-	overflow: visible;
-	 @include transition(0.4s, ease, border);
+    overflow: visible
 }
 
-input[type='checkbox']#checkbox-p+label:before {
-    content: '';
-    width: 15px;
-    height: 15px;
-	top: -54px;
-    left: 0;
-    bottom: 0;
-    right: -54px;
+input[type='checkbox']#checkbox-w+label:before,
+input[type='checkbox']#checkbox-w+label:after {
     position: absolute;
     opacity: 0;
     z-index: -1;
-    margin: auto;
-    background: rgb(123, 74, 74) url(../images/tick-icon-white.png) no-repeat;
-    background-position: center;
-    background-size: 13px;
-    @include transition(0.4s, ease, all);
+    @include transition(0.5s, ease, all);
 }
 
-input[type='checkbox']#checkbox-p:checked+label {
-	border: 8px solid #fff;
-}
-
-input[type='checkbox']#checkbox-p:checked+label:before {
-    opacity: 1;
-    z-index: 1;
-	top: -38px;
+input[type='checkbox']#checkbox-w+label:before {
+    content: '';
+    width: 1px;
     left: 0;
-    bottom: 0;
-    right: -37px;
+    right: 0;
+    top: calc(100% + 3px);
+    margin: auto;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid $border-white;
+}
+
+input[type='checkbox']#checkbox-w+label:after {
+    content: attr(data-input-value);
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    @include border-radius(4px);
+    background-color: $background-white;
+    color: $font-pink;
+    @include custom-font($fs-small, $fw-400);
+    text-align: center;
+    text-transform: none;
+    top: calc(100% + 10px);
+    text-indent: 0;
+    overflow: hidden;
+}
+
+input[type='checkbox']#checkbox-w:checked+label {
+    background: $background-white;
+}
+
+input[type='checkbox']#checkbox-w:checked+label:before,
+input[type='checkbox']#checkbox-w:checked+label:after {
+    opacity: 1;
+    z-index: 11;
+    @include transition(0.25s, ease, all);
 }

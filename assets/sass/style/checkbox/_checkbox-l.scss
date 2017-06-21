@@ -3,8 +3,8 @@
   ------------------*/
 
 input[type='checkbox']#checkbox-l+label {
-    border: 1px solid #fff;
-    background: #fff;
+    border: 1px solid $border-white;
+    background: $background-white;
 }
 
 input[type='checkbox']#checkbox-l+label:before,
@@ -21,14 +21,14 @@ input[type='checkbox']#checkbox-l+label:after {
 input[type='checkbox']#checkbox-l+label:before {
     width: 100%;
     height: 100%;
-    background: #f79494;
+    background: $background-pink;
     @include transition(0.2s, ease, all);
 }
 
 input[type='checkbox']#checkbox-l+label:after {
     width: 0;
     height: 0;
-    background: #fff;
+    background: $background-white;
     @include transition(0.2s, ease, all);
     transition-delay: 0.2s;
     -webkit-transition-delay: 0.2s;

@@ -3,37 +3,54 @@
   ------------------*/
 
 input[type='checkbox']#checkbox-v+label {
-    border: 1px solid #fff;
+    border: 1px solid $border-white;
     background: transparent;
+    overflow: visible
 }
 
 input[type='checkbox']#checkbox-v+label:before,
 input[type='checkbox']#checkbox-v+label:after {
-    content: '';
-    width: 20px;
-    height: 4px;
-	top: 0;
-    left: 0;
-    bottom:0;
-    right: 0;
     position: absolute;
+    opacity: 0;
+    z-index: -1;
+    @include transition(0.5s, ease, all);
+}
+
+input[type='checkbox']#checkbox-v+label:before {
+    content: '';
+    width: 1px;
+    left: 0;
+    right: 0;
+    bottom: calc(100% + 3px);
     margin: auto;
-   background: transparent;
-	@include transition(0.2s, ease, all);
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid $border-white;
+}
+
+input[type='checkbox']#checkbox-v+label:after {
+    content: attr(data-input-value);
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    @include border-radius(4px);
+    background-color: $background-white;
+    color: $font-pink;
+    @include custom-font($fs-small, $fw-400);
+    text-align: center;
+    text-transform: none;
+    bottom: calc(100% + 10px);
+    text-indent: 0;
+    overflow: hidden;
+}
+
+input[type='checkbox']#checkbox-v:checked+label {
+    background: $background-white;
 }
 
 input[type='checkbox']#checkbox-v:checked+label:before,
 input[type='checkbox']#checkbox-v:checked+label:after {
-	@include transition(0.4s, ease, all);
-	background: #fff;
-}
-
-input[type='checkbox']#checkbox-v:checked+label:before {
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-}
-
-input[type='checkbox']#checkbox-v:checked+label:after {
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
+    opacity: 1;
+    z-index: 11;
+    @include transition(0.25s, ease, all);
 }

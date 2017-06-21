@@ -3,27 +3,27 @@
   ------------------*/
 
 input[type='checkbox']#checkbox-q+label {
-    border: 1px solid #fff;
-    background: #fff;
+    border: 1px solid $border-white;
+    background: $background-white;
 }
 
 input[type='checkbox']#checkbox-q+label:before {
     content: '';
     width: 100%;
     height: 100%;
-	top: 0;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
     margin: auto;
-    background: #f79494;
-	@include border-radius(0);
-	@include transition(0.4s, ease, all);
+    background: $background-pink;
+    @include border-radius(0);
+    @include transition(0.4s, ease, all);
 }
 
 input[type='checkbox']#checkbox-q:checked+label:before {
     width: 20px;
-	height: 20px;
-	@include border-radius(50%);
+    height: 20px;
+    @include border-radius(50%);
 }

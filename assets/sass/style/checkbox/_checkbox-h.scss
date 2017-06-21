@@ -3,7 +3,7 @@
   ------------------*/
 
 input[type='checkbox']#checkbox-h+label {
-    border: 1px solid #fff;
+    border: 1px solid $border-white;
     background: transparent url(../images/tick-icon.png) no-repeat;
     background-position: 50% 0;
     background-size: 40px 80px;

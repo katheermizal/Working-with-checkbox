@@ -1,41 +1,56 @@
 /*-------------------
-  #checkbox-p style
+  #checkbox-x style
   ------------------*/
 
-input[type='checkbox']#checkbox-p+label {
-    border: 1px solid #fff;
+input[type='checkbox']#checkbox-x+label {
     background: transparent;
-	overflow: visible;
-	 @include transition(0.4s, ease, border);
+    border-top: 5px solid $border-white;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
 }
 
-input[type='checkbox']#checkbox-p+label:before {
+input[type='checkbox']#checkbox-x+label:before,
+input[type='checkbox']#checkbox-x+label:after {
     content: '';
-    width: 15px;
-    height: 15px;
-	top: -54px;
-    left: 0;
-    bottom: 0;
-    right: -54px;
+    height: 5px;
+    right: 0;
     position: absolute;
-    opacity: 0;
-    z-index: -1;
-    margin: auto;
-    background: rgb(123, 74, 74) url(../images/tick-icon-white.png) no-repeat;
-    background-position: center;
-    background-size: 13px;
-    @include transition(0.4s, ease, all);
+    background: $background-white;
+    @include transition(0.2s, ease, all);
 }
 
-input[type='checkbox']#checkbox-p:checked+label {
-	border: 8px solid #fff;
+input[type='checkbox']#checkbox-x+label:before {
+    top: 10px;
+    width: 25px;
 }
 
-input[type='checkbox']#checkbox-p:checked+label:before {
-    opacity: 1;
-    z-index: 1;
-	top: -38px;
-    left: 0;
+input[type='checkbox']#checkbox-x+label:after {
+    top: 25px;
+    width: 15px;
+}
+
+input[type='checkbox']#checkbox-x:checked+label {
+    border-top: 0px solid transparent;
+}
+
+input[type='checkbox']#checkbox-x:checked+label:before,
+input[type='checkbox']#checkbox-x:checked+label:after {
+    top: 0;
     bottom: 0;
-    right: -37px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30px;
+    height: 5px;
+}
+
+input[type='checkbox']#checkbox-x:checked+label:before {
+    transform: rotate(-315deg);
+    -webkit-transform: rotate(-315deg);
+}
+
+input[type='checkbox']#checkbox-x:checked+label:after {
+    transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
 }

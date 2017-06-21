@@ -3,7 +3,7 @@
   ------------------*/
 
 input[type='checkbox']#checkbox-m+label {
-    border: 1px solid #fff;
+    border: 1px solid $border-white;
     background: transparent;
 }
 
@@ -17,7 +17,7 @@ input[type='checkbox']#checkbox-m+label:before {
     right: 0;
     position: absolute;
     margin: auto;
-    background-color: #fff;
+    background-color: $background-white;
     opacity: 0;
     z-index: -1;
     @include transition(0.4s, ease-in-out, all);

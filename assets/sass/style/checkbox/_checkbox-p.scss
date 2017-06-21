@@ -3,17 +3,17 @@
   ------------------*/
 
 input[type='checkbox']#checkbox-p+label {
-    border: 1px solid #fff;
+    border: 1px solid $border-white;
     background: transparent;
-	overflow: visible;
-	 @include transition(0.4s, ease, border);
+    overflow: visible;
+    @include transition(0.4s, ease, border);
 }
 
 input[type='checkbox']#checkbox-p+label:before {
     content: '';
     width: 15px;
     height: 15px;
-	top: -54px;
+    top: -54px;
     left: 0;
     bottom: 0;
     right: -54px;
@@ -28,13 +28,13 @@ input[type='checkbox']#checkbox-p+label:before {
 }
 
 input[type='checkbox']#checkbox-p:checked+label {
-	border: 8px solid #fff;
+    border: 8px solid $border-white;
 }
 
 input[type='checkbox']#checkbox-p:checked+label:before {
     opacity: 1;
     z-index: 1;
-	top: -38px;
+    top: -38px;
     left: 0;
     bottom: 0;
     right: -37px;
