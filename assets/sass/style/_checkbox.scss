@@ -3,7 +3,8 @@ Check Boxes Styles
 ========================*/
 
 input[type='checkbox'] {
-    display: none;
+    opacity: 0;
+	z-index: -1;
 }
 
 input[type='checkbox']+label {
